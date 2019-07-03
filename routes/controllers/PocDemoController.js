@@ -29,7 +29,7 @@ PocDemoController.prototype.getData = function(cb, result) {
               gross_datetime: moment(doc[0].gross_datetime).format('MM-DD-YYYY HH:MM:SS'),
               gross_load_mw: doc[0].gross_load_mw,
               net_datetime: moment(doc[0].net_datetime).format('MM-DD-YYYY HH:MM:SS'),
-              net_load_mw: doc.net_load_mw,
+              net_load_mw: doc[0].net_load_mw,
               station_use_mwh: doc[0].station_use_mwh,
               frequency_hz: doc[0].frequency_hz,
               reactive_power_mv: doc[0].reactive_power_mv,
