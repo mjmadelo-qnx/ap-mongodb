@@ -3,7 +3,10 @@ var connection = require('../../services/PocDemoMongoDB');
 
 const pocDemoSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
-    meterassignemnt_id: Number,
+    meterassignemnt_id: {
+        type: Number,
+        unique: true
+    },
     gross_datetime: Date,
     gross_load_mw: String,
     net_datetime: Date,
