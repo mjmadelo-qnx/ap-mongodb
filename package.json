@@ -1,0 +1,31 @@
+{
+  "name": "ap-mongodb",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unionbankph/api-microservice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unionbankph/api-microservice/issues"
+  },
+  "homepage": "https://github.com/unionbankph/api-microservice#readme",
+  "description": "",
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "helmet": "^3.18.0",
+    "moment": "^2.24.0",
+    "mongoose": "^5.6.2",
+    "rekuire": "^0.1.9",
+    "serve-favicon": "^2.5.0",
+    "uuid": "^3.3.2",
+    "winston": "^2.4.1"
+  }
+}
