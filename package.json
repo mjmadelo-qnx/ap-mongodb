@@ -23,7 +23,7 @@
     "express": "^4.17.1",
     "helmet": "^3.18.0",
     "moment": "^2.24.0",
-    "mongoose": "^5.6.2",
+    "mongoose": "^5.7.5",
     "rekuire": "^0.1.9",
     "serve-favicon": "^2.5.0",
     "uuid": "^3.3.2",
