@@ -16,6 +16,37 @@ function PocDemoController(req, res) {
   this.res = res;
 };
 
+//Get All Data
+PocDemoController.prototype.getAllData = function(cb, result) {
+  let ACTION = '[getAllData]';
+
+  let id = this.req.params.meterId;
+  let getData = PocDemoData.find({}).exec();
+  getData.then((doc)=>{
+      console.log(doc);
+      if(doc.length > 0) {
+          return cb(null, {
+            meterassignemnt_id: doc[0].meterassignemnt_id,
+            gross_datetime: moment(doc[0].gross_datetime).format('MM-DD-YYYY HH:MM:SS'),
+            gross_load_mw: doc[0].gross_load_mw,
+            net_datetime: moment(doc[0].net_datetime).format('MM-DD-YYYY HH:MM:SS'),
+            net_load_mw: doc[0].net_load_mw,
+            station_use_mwh: doc[0].station_use_mwh,
+            frequency_hz: doc[0].frequency_hz,
+            reactive_power_mv: doc[0].reactive_power_mv,
+            frequency_status: doc[0].frequency_status,
+            created_by: doc[0].created_by,
+            created_date: moment(doc[0].created_date).format('MM-DD-YYYY HH:MM:SS')
+          });
+      } else {
+          return cb(Errors.raise('BANKWIDE_CUSTOMER_NOTFOUND'));
+      }
+  }).catch((error)=>{
+      Logger.log('error', TAG + ACTION, error);
+      return cb(Errors.raise('BANKWIDE_ERROR', error));
+  });
+};
+
 //Get Data
 PocDemoController.prototype.getData = function(cb, result) {
     let ACTION = '[getData]';
